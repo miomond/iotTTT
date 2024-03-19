@@ -1,0 +1,19 @@
+
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+}
+
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  height: fit-content!important;
+  min-height: 100svh;
+  }

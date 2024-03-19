@@ -1,0 +1,18 @@
+#About .row {
+    /* padding-left: 40px; */
+
+    }
+
+#About .contents ul {
+    list-style: none;
+}
+
+#About .contents ul li {
+    padding: 20px 20px;
+}
+
+
+.lista{
+    height: 400px;
+    width: 600px;
+}
