@@ -70,7 +70,7 @@ function Dashboard() {
             <h5 className="card1-h">Lights - interior</h5>
             <div className="lights">
               <div className=" d-flex   align-content-center">
-     {!Ligh ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light remove fa-regular fa-lightbulb" /> }           
+     {!Ligh ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light  fa-regular fa-lightbulb" /> }           
                 <h6 className="card1-h">Kitchen</h6>
               </div>
               <div className="">
@@ -81,14 +81,14 @@ function Dashboard() {
               </div>
             </div>
             <div className="lights">
-              <div  className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb     d-none" />
-                <i className="fa-solid fa-lightbulb"></i>
-                <h6 className="card1-h">Dining room</h6>
+              <div className=" d-flex   align-content-center">
+              {!Light2 ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light  fa-regular fa-lightbulb" /> }           
+
+                <h6 className="card1-h">Kitchen</h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
+                  <input type="checkbox" onChange={handleLighteChange} />
                   <span className="slider" />
                 </label>
               </div>
@@ -113,76 +113,6 @@ function Dashboard() {
               <div className="">
                 <label className="switcher toggel-light">
                   <input type="checkbox" disabled={true}/>
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Bathroom</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <hr className="hr" />
-            <div className="two-buttons">
-              <button className="All-ON control-btns">All ON</button>
-              <button className="control-btns">All OFF</button>
-            </div>
-          </div>
-          <div className="part2 p-4 mt-4">
-            <h5 className="card1-h">Lights - interior</h5>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-              {!Light2 ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light remove fa-regular fa-lightbulb" /> }           
-
-                <h6 className="card1-h">Kitchen</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" onChange={handleLighteChange} />
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                {/* <i class="fa-solid fa-lightbulb"></i> */}
-                <h6 className="card1-h">Dining room</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Living room</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Bedroom</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
                   <span className="slider" />
                 </label>
               </div>

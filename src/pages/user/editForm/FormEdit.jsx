@@ -1,10 +1,22 @@
 import React from 'react'
 import './formEdit.css'
 import imgEdit from '../../../assets/EditFormSvg.svg'
+import { useAuth } from '../../../context/auth'
+
+
+
+
+
 function FormEdit() {
+
+  const auth = useAuth();
+ console.log(auth);
+
+
+
   return (
 <>
-<section>
+<section className='section-edit-form'>
   <div>
     <img className="img" src={imgEdit} alt="" />
   </div>

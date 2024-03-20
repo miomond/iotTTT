@@ -1,64 +1,74 @@
 import React from "react";
 import "./profile.css";
+import { useAuth } from "../../../context/auth";
 function Profile() {
+ const auth = useAuth()
+console.log(auth.user);
+
+ const userData= auth.user;
+
+
   return (
-    <div className="contents">
-      <section id="">
-        <div className="part1 w-100 h-100" >
-          <div className="section-title   m-5">
-            <h2>About</h2>
+    <section className="contents">
+      <div className="profile ">
+        <div className=" d-flex   justify-content-start  m-5  "><h2>my Data</h2></div>
+        <div className=" cont d-flex w-100  justify-content-around    ">
+     
+        <div className="  d-flex justify-content-around ">
+          <div className=" lista  " >
+          <div className="p-3">
+              <i className="fa-solid fa-circle-chevron-right" />
+              <strong>Name:</strong> <span>{userData.fullName}</span>
+            </div>
+            <div className="p-3">
+              <i className="fa-solid fa-circle-chevron-right" />
+              <strong>Birthday:</strong> <span>{userData.fullName}</span>
+            </div>
+            <div className="p-3">
+              <i className="fa-solid fa-circle-chevron-right" />
+              <strong>Email:</strong>
+              <span>{userData.email}</span>
+            </div>
+            <div className="p-3">
+              <i className="fa-solid fa-circle-chevron-right" />
+              <strong>Phone:</strong>
+              <span>{userData.phoneNumber}</span>
+            </div>
+            <div className="p-3">
+              <i className="fa-solid fa-circle-chevron-right" />
+              <strong>City:</strong>
+              <span> {userData.address}</span>
+            </div>
           </div>
-          <div className="contents">
-            <div className="lista">
-              <ul>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Birthday:</strong> <span>1 May 1998</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Email:</strong>
-                  <span>yousraamostaffa010@gmail.com</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Phone:</strong>
-                  <span>123 456 7890</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>City:</strong>
-                  <span> Aswan , Egypt</span>
-                </li>
-              </ul>
-            </div>
-            <div className="lista">
-              <ul>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Age:</strong>
-                  <span>25</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Gender:</strong>
-                  <span>Femail</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Points:</strong> <span>100</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-circle-chevron-right" />
-                  <strong>Status:</strong>
-                  <span>Available</span>
-                </li>
-              </ul>
-            </div>
+       
+        </div>
+        <div className=" d-flex justify-content-around">
+
+        <div className="lista">
+          <div className="p-3">
+            <i className="fa-solid fa-circle-chevron-right" />
+            <strong>Age:</strong>
+            <span>{userData.fullName}</span>
+          </div>
+          <div className="p-3">
+            <i className="fa-solid fa-circle-chevron-right" />
+            <strong>Gender:</strong>
+            <span>{userData.fullName}</span>
+          </div>
+          <div className="p-3">
+            <i className="fa-solid fa-circle-chevron-right" />
+            <strong>Points:</strong> <span>100</span>
+          </div>
+          <div className="p-3">
+            <i className="fa-solid fa-circle-chevron-right" />
+            <strong>Status:</strong>
+            <span>{userData.fullName}</span>
           </div>
         </div>
-      </section>
-    </div>
+        </div>
+      </div>
+      </div>
+    </section>
   );
 }
 

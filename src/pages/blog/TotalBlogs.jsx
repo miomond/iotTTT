@@ -1,23 +1,26 @@
-import axios from "axios";
 import React from "react";
-import HeroPost from "../../components/heroPost/HeroPost";
-import PostPage from "../../components/PostsPage/PostPage";
-import UserPost from "../user/bostAblog/UserPost";
+import axios from "axios";
+import UserP from "../../components/userPost/UserP";
+import { useState, useEffect } from "react";
+import SHPost from "../user/blugin/SHPost";
+
 
 function TotalBlogs() {
-  let itemData;
-  async function fetchData() {
-    try {
-      const response = await axios.get("http://localhost:5000/blog/allblog");
-      itemData = response.data.data;
-    } catch (error) {
-      console.error("Error fetching data:", error); // Handle errors gracefully
-    }
-    return itemData;
-  }
-  console.log(itemData);    
+  const [itemData, setItemData] = useState([]);
+ 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/blog/allblog");
+        setItemData(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error); // Handle errors gracefully
+      }
+    };
 
-  fetchData(); // Call the function to execute the request
+    fetchData();
+  }, []); // Empty dependency array to fetch only once
+
 
   return (
     <>
@@ -26,14 +29,13 @@ function TotalBlogs() {
           className="parent-second  d-flex justify-content-around w-100 flex-wrap "
           style={{ width: "fit-content", height: "fit-content" }}
         >
-          {itemData.map((item, i) => {
-            return (
-              <div>
-                {" "}
-                <UserPost item={item} i={i} />{" "}
+          {itemData.length > 0 && (
+            itemData.map((item, i) => (
+              <div key={i}> {/* Add a key for each item */}
+                <SHPost item={item} i={i} />
               </div>
-            );
-          })}
+            ))
+          )}
         </div>
       </div>
     </>

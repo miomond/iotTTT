@@ -30,12 +30,12 @@
       rgba(0, 0, 0, 0.1) 20%,
       rgba(0, 0, 0, 0.2) 20%);
       
-  height: 65vh;
+  height: 70vh;
 
 }
 
 .conteiner:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 17, 255, 0.76) 0px 5px 15px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -45,6 +45,7 @@
   /* font-weight: 600; */
   font-family: 'Poppins', sans-serif;
   color: #e8f6f9;
+  width: 80%;
 
 }
 

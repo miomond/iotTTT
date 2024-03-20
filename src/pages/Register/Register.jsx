@@ -19,7 +19,7 @@ function Register() {
   async function onSubmit(values) {
     try {
       const response = await axios.post(
-        "http://localhost:5000/users/register",
+        "http://localhost:8000/users/register",
         values,
         {
           headers: { "Content-Type": "application/json" },
@@ -185,7 +185,7 @@ function Register() {
 
                 <FormControl
                   id="standard-Number-input"
-                  type="Number"
+                  type="tel"
                   helperText="This Input is Required"
                   autoComplete="current-password"
                   variant="standard"
@@ -205,15 +205,15 @@ function Register() {
                   })}
                 />
 
-                {errors.phoneNr && errors.phoneNr.type === "required" && (
+                {errors.phoneNumber && errors.phoneNumber.type === "required" && (
                   <span style={{ color: "red" }}>This is required</span>
                 )}
-                {errors.phoneNr && errors.phoneNr.type === "maxLength" && (
+                {errors.phoneNumber && errors.phoneNumber.type === "maxLength" && (
                   <span style={{ color: "red" }}>Max length exceeded</span>
                 )}
-                {errors.phoneNr && errors.phoneNr.type === "pattern" && (
+                {errors.phoneNumber && errors.phoneNumber.type === "pattern" && (
                   <span style={{ color: "red" }}>
-                    Entered value does not match email format
+                    Entered value does not match Phone Number format
                   </span>
                 )}
               </div>
@@ -224,7 +224,7 @@ function Register() {
 
                 <FormControl
                   id="standard-NationalId-input"
-                  type="number"
+                  type="tel"
                   helperText="This Input is Required"
                   autoComplete="current-password"
                   variant="standard"
@@ -298,29 +298,7 @@ function Register() {
               
             </div>
             <div className="form-row">
-            <div className="mydict">
-                <div>
-                  <label className="label">
-                    <input
-                      type="radio"
-                      name="radio"
-                      defaultChecked=""
-                      value={"female"}
-                      {...register("gender")}
-                    />
-                    <span>Male</span>
-                  </label>
-                  <label className="label">
-                    <input
-                      type="radio"
-                      name="radio"
-                      value={"male"}
-                      {...register("gender")}
-                    />
-                    <span>Female</span>
-                  </label>
-                </div>
-              </div>
+            
               <div className="submit-btn">
                 <div className="input-data">
                   <div className="inner" />

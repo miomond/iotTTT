@@ -23,7 +23,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-bottom: 50px;
+/* margin-bottom: 50px; */
 color: #ffffff;
 }
 
@@ -47,7 +47,7 @@ color: #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 0px;
+        /* margin-top: 0px; */
     
     }
     
@@ -79,7 +79,21 @@ color: #ffffff;
         margin-top: 25px;
     }
     
-    
+   
+    .bestBlog{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        color:#002c5f ;
+    }
+    .lineBestblog{
+        width: 10%;
+        display: flex;
+        border: 1px solid;
+        justify-content: center;
+        align-items: center;
+ margin-left: 680px;
+    }
     
     @media only screen and (max-width: 800px) {
         .post img {

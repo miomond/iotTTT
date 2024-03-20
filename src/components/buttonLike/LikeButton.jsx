@@ -1,45 +1,40 @@
 import { useState } from "react";
 import "./likeButton.css";
+import { useAuth } from "../../context/auth";
+import axios from "axios";
 
-function LikeButton() {
+
+function LikeButton({ likes = 0 }) {
+  const auth = useAuth();
   const [reactionType, setReactionType] = useState(null);
-  const [likeCount, setLikeCount] = useState(50);
-  const [dislikeCount, setDislikeCount] = useState(25);
+  const [localLikeCount, setLocalLikeCount] = useState(likes);
+  const [flage ,setFlage ] = useState(false)
 
-  const handleReactionClick = (reaction) => {
+  const handleReactionClick =   (reaction) => {
     if (reactionType === reaction) {
-      // If the same reaction is clicked again, reset the reaction type
+      // Reset reaction and decrement count
       setReactionType(null);
-      // Decrement like or dislike count based on the current reaction
-      if (reaction === "like") {
-        setLikeCount(likeCount - 1);
-      } else {
-        setDislikeCount(dislikeCount - 1);
-      }
+      setLocalLikeCount((prevCount) => prevCount - 1);
     } else {
-      // Increment like or dislike count based on the new reaction
-      if (reaction === "like") {
-        setLikeCount(likeCount + 1);
-        // If there was a previous reaction, decrement its count
-        if (reactionType === "dislike") {
-          setDislikeCount(dislikeCount - 1);
-        }
-      } else {
-        setDislikeCount(dislikeCount + 1);
-        // If there was a previous reaction, decrement its count
-        if (reactionType === "like") {
-          setLikeCount(likeCount - 1);
-        }
+      setReactionType('like');
+      setLocalLikeCount((prevCount) => prevCount + 1);      
+      try {
+        axios.post(
+          `http://localhost:8000/blog/likeBlog/${id}/like`,
+          {}        );
+        setReactionType(reaction);
+        setLocalLikeCount((prevCount) => prevCount + 1); // Increment local count
+      } catch (error) {
+        console.error(error);
+        // Handle error (e.g., display error message to user)
       }
-      // Set the new reaction type
-      setReactionType(reaction);
     }
   };
 
   return (
     <>
       <button
-        className={`Btn ${reactionType === "like" ? "like-active" : ""}`}
+        className={`Btn ${reactionType === "like" ? "like-active animation" : ""}`}
         onClick={() => handleReactionClick("like")}
       >
         <span className="leftContainer">
@@ -54,7 +49,7 @@ function LikeButton() {
           <span className="like">Like</span>
         </span>
         <span className={`likeCount ${reactionType === "like" ? "like-active" : ""}`}>
-          {likeCount}
+          {localLikeCount}
         </span>
       </button>
     </>

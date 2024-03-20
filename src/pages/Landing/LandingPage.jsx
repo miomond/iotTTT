@@ -3,9 +3,9 @@ import './landing.css';
 import "./landingRES.css";
 
 import img from "../../assets/illustration.png";
-import img1 from "../../assets/card1.png";
-import img2 from "../../assets/card2.png";
-import img3 from "../../assets/Smart home-pana.svg";
+import img1 from "../../assets/BlogSvg.svg";
+import img2 from "../../assets/BlogCardSvg.svg";
+import img3 from "../../assets/BlogCard1Svg.svg";
 
 import { useSpring, animated } from "@react-spring/web";
 import LandinngFooterSection from "../../components/footer/LandinngFooterSection";
@@ -21,13 +21,13 @@ function LandingPage() {
     <>
       <Navpar />
 
-      <div>
+      {/* <div> */}
         {" "}
-        \
-        <div className="container">
+        
+        <div className="">
           {/* hero */}
           <animated.div
-            className="heroSection  d-flex  flex-column-reverse  flex-lg-row      justify-content-center w-100  mt-5 pt-5  "
+            className="heroSection  d-flex  flex-column-reverse  flex-lg-row      justify-content-center   mt-5 pt-5  "
             style={props}
           >
             <div className="praHero   d-flex flex-column justify-content-center align-items-center  w-100 mb-3  mt-lg-5">
@@ -102,6 +102,7 @@ function LandingPage() {
                   <div className="dot dot-5" />
                 </div>
               </div>
+              <div className="tra"></div>
             </div>
             <div className="imgHero  mt-5">
               <img
@@ -114,12 +115,12 @@ function LandingPage() {
             </div>
           </animated.div>
         </div>
-      </div>
+      {/* </div> */}
       <div>
         {" "}
-        <section className="banner  mt-5 pt-  d-flex flex-column justify-content-center w-100">
+        <section className="banner    d-flex flex-column justify-content-center w-100">
           {/* heder */}
-          <h2 className="  ms-2">
+          <h2 >
             our job is to ensure you have the luxury of the new technology{" "}
           </h2>
           {/* line  */}

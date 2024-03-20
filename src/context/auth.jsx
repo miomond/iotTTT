@@ -8,12 +8,12 @@ export const AuthProvider = ({ children }) => {
   
   const login = (user) => {
     setUser(user);
-  };
+     };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user"); // Clear local storage
-    localStorage.removeItem("token"); // Clear token if needed
+    // localStorage.removeItem("user"); // Clear local storage
+    // localStorage.removeItem("token"); // Clear token if needed
     
   };
 

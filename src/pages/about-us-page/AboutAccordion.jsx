@@ -1,33 +1,20 @@
 import "./New folder/aboutUsGeneral.css";
+import Accordion from 'react-bootstrap/Accordion';
 
 import "./New folder/aboutAccordion.css"
 function AboutAccordion() {
   return (
     <>
   {/* -----------------------start Accordion---------- */}
-  <div className="accordion-container">
-    <div className="accordion accordion-flush" id="accordionFlushExample">
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="flush-headingOne">
-          <button
-            className="bold accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseOne"
-            aria-expanded="false"
-            aria-controls="flush-collapseOne"
-          >
-            A wondrfull start.
-          </button>
-        </h2>
-        <div
-          id="flush-collapseOne"
-          className="accordion-collapse collapse"
-          aria-labelledby="flush-headingOne"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            Our story starts with a man who wondered about a better way. In
+
+
+
+<div className="accordion-container"> 
+    <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>  A wondrfull start.</Accordion.Header>
+        <Accordion.Body>
+        Our story starts with a man who wondered about a better way. In
             2007, Stuart Lombard made a personal goal to reduce his
             environmental footprint. After discovering that heating and cooling
             make up 40% to 60% of home energy use, he attempted to program his
@@ -42,30 +29,12 @@ function AboutAccordion() {
             equivalent of saving enough energy to take all the homes in Los
             Angeles and Chicago off the grid for a year. And that impact
             continues to grow every day.
-          </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="flush-headingTwo">
-          <button
-            className="bold accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseTwo"
-            aria-expanded="false"
-            aria-controls="flush-collapseTwo"
-          >
-            A different approach.
-          </button>
-        </h2>
-        <div
-          id="flush-collapseTwo"
-          className="accordion-collapse collapse"
-          aria-labelledby="flush-headingTwo"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            At ecobee, we do things differently. We’re Planet Positive. We
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>A different approach.</Accordion.Header>
+        <Accordion.Body>
+        At ecobee, we do things differently. We’re Planet Positive. We
             believe that through technology, we can improve the way people,
             homes, and cities use and consume energy to create a sustainable
             future. We aspire to be a Welcome Guest. As a guest in your home,
@@ -78,30 +47,12 @@ function AboutAccordion() {
             human support that exceeds expectations. Finally, ecobee offers
             Seamless Experiences, which means effortless solutions that just
             work, on their own or with other smart home systems.
-          </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header" id="flush-headingThree">
-          <button
-            className="bold accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseThree"
-            aria-expanded="false"
-            aria-controls="flush-collapseThree"
-          >
-            A smarter future.
-          </button>
-        </h2>
-        <div
-          id="flush-collapseThree"
-          className="accordion-collapse collapse"
-          aria-labelledby="flush-headingThree"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            The connected home of the future isn’t just smart. It learns,
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header> A smarter future.</Accordion.Header>
+        <Accordion.Body>
+        The connected home of the future isn’t just smart. It learns,
             adjusts, and adapts based on your needs, behaviors, and preferences.
             It’s not just about more devices with flashy features, it’s about
             meaningful solutions that work so well together, they fade into the
@@ -111,11 +62,13 @@ function AboutAccordion() {
             make an even greater impact. Because the more homes we are in, the
             more we can help build a sustainable world. Please consider this
             your invitation to join us in wondering about a better world.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+</div>
+
+  
+  
   {/* ----------------end Accordion------------ */}
 </>
 

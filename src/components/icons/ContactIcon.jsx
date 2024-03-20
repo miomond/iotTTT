@@ -12,7 +12,7 @@ function ContactIcon() {
     x="0px"
     y="0px"
     viewBox="0 0 256 256"
-    style={{ enableBackground: "new 0 0 256 256" ,width:'25px' }}
+    style={{ enableBackground: "new 0 0 256 256" ,width:'35px' }}
     xmlSpace="preserve"
   >
     <style

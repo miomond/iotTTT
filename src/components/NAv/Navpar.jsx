@@ -25,7 +25,7 @@ function Navpar() {
 
   return (
     <Navbar collapseOnSelect expand="lg" id="navo"  style={{height:'fit-content' , padding:'0px 10px'}}>
-    <img className="semiLogo" style={{}} src={semiLogo} alt="semi logo" />
+    <img className="semiLogo"  src={semiLogo} alt="semi logo" />
       <Navbar.Brand href="/">
       <img  className="ogo "  style={{ transform: `rotate(${rotateValue}deg)`, width: "50px" }}  src={OGO}  alt="LOGO"  />
       </Navbar.Brand>
@@ -33,17 +33,17 @@ function Navpar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className=" me-auto Navy   ">
           <NavLink to="/" className='ah '>
-            <Home /> Home
+            <Home/> <span className='ms-2'>Home</span>
           </NavLink>
           <NavLink className='ah' to="/Blog">
-            <BlgIcon /> our blogs{" "}
+            <BlgIcon /> <span className='ms-2'>our blogs</span> {" "}
           </NavLink>
           <NavLink className='ah' to="/about">
             {" "}
-            <img width="25px" src={About} alt="about logo"></img> About us
+            <img  style={{width:30}} src={About} alt="about logo"></img><span className='ms-3'>About us</span> 
           </NavLink>
           <NavLink className='ah' to="/contactUs">
-            <ContactIcon /> Contact us{" "}
+            <ContactIcon /> <span className='ms-3'>Contact us</span> {" "}
           </NavLink>
         </Nav>
         <Nav>
@@ -52,7 +52,7 @@ function Navpar() {
               </NavLink>
               <NavLink eventKey={2} to="/register" className="Register">
                 {" "}
-                <Rgis /> Register{" "}
+                <Rgis /> <span className='ms-2'>Register</span>
                 <div className="icon">
                   <svg
                     height={24}

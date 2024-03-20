@@ -9,6 +9,8 @@ import CommentButton from "../commentButton/CommentButton";
 function HeroPost( {item , i} ) {
   const post =item;
   return (
+    <>
+  
     <div className="div1-card1" id="card1" key={i}>
       <img className="postImage" src={post.img} alt=" "  />
       <div className="card-post">
@@ -23,6 +25,7 @@ function HeroPost( {item , i} ) {
       </div>
     
     </div>
+    </>
   );
 }
 
