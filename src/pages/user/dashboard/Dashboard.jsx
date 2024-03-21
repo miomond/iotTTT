@@ -12,14 +12,6 @@ import { set, useForm } from "react-hook-form";
 import { Doghnut } from "../../../components/charts/Doghnut";
 import fanSvg from '../../../assets/fan-svgrepo-com.svg'
 function Dashboard() {
-  const [garag, setGarage] = useState(true);
-  const handleGarageChange = (garag) => {
-    let gar = garag.target.checked;
-    {
-      gar ? (gar = false) : (gar = true);
-    }
-    console.log(gar + " garage is ");
-  };
 
   const [Loc, setLock] = useState(false);
   const handleLockChange = (locker) => {
@@ -39,13 +31,23 @@ function Dashboard() {
   const handleFaChange = (fan) => {
     setFa(fan.target.checked);
   };
+  const [m , setM] = useState(false);
 
   const hanleAllONS = ()=>{
-    let m = true;
+   setM(true);
     setFa(m);
     setLight2(m);
     setLight(m);
   }
+  const hanleAllOFFS = ()=>{
+    setM(false);
+    setFa(m);
+    setLight2(m);
+    setLight(m);
+  }
+
+
+  const [degree , Setdegree] = useState('75C')
 
   return (
     <>
@@ -69,13 +71,12 @@ function Dashboard() {
           </div>
           <div className="part1 mt-4 d-flex  justify-content-between  flex-nowrap align-content-center">
             <div className="d-flex  align-content-center justify-content-center p-4">
-              <img className="lock-svg  ms-2 me-2" src={lock} alt="" />
               <img src={garage} alt="" className="garage-svg" />
               <h6 className="card1-h">Garage</h6>
             </div>
             <div className="d-flex  align-content-center justify-content-center p-4">
               <label className="switcher">
-                <input type="checkbox" onChange={handleGarageChange} />
+                <input type="checkbox" />
                 <span className="slider" />
               </label>
             </div>
@@ -92,7 +93,7 @@ function Dashboard() {
                 ) : (
                   <i className="lamp-light  fa-regular fa-lightbulb" />
                 )}
-                <h6 className="card1-h">Kitchen</h6>
+                <h6 className="card1-h">out side Lights </h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
@@ -109,11 +110,11 @@ function Dashboard() {
                   <i className="lamp-light  fa-regular fa-lightbulb" />
                 )}
 
-                <h6 className="card1-h">Kitchen</h6>
+                <h6 className="card1-h">inside lights </h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
-                  <input type="checkbox" onChange={handleLighteChange}  checked={Light2}  />
+                  <input type="checkbox " onChange={handleLighteChange}  checked={Light2}          />
                   <span className="slider" />
                 </label>
               </div>
@@ -134,11 +135,14 @@ function Dashboard() {
         
             <hr className="hr" />
             <div className="two-buttons">
-              <button className="All-ON control-btns" onClick={hanleAllONS}>All ON</button>
-              <button className="control-btns">All OFF</button>
+              {!m ? (              <button className="All-ON control-btns" onClick={hanleAllONS}>All ON</button>
+):(              <button className="control-btns  ms-5 "  onClick={hanleAllOFFS} >All OFF</button>
+)}
             </div>
           </div>
-          <div className="  part2 p-4 mt-4 "><Doghnut/>
+          <div className="  part2 p-4 mt-4 ">
+            <Doghnut/>
+          <div className="degree">{degree} </div>
             
           </div>
 

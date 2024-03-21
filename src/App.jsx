@@ -19,6 +19,7 @@ import Profile from "./pages/user/profile/Profile.jsx";
 import Blogering from "./pages/user/bostAblog/Blogering.jsx";
 import TotalBlogs from "./pages/blog/TotalBlogs.jsx";
 import FullBlog from "./pages/user/blugin/FullBlog.jsx";
+import AboutUs from "./pages/about-us-page/AboutUs.jsx";
 function App() {
   let auth = useAuth();
 
@@ -28,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/"          element={<LandingPage />} />
         <Route path="/Blog"      element={<Bloger />} />
-        <Route path="/about"     element={<About />} />
+        <Route path="/about"     element={<AboutUs />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/login"     element={<Login />} />
         <Route path="/register"  element={<Register />} />
