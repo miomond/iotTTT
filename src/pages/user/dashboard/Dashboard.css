@@ -15,9 +15,13 @@
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2.8px);
 }
+.iconImg{
+  width: 26px;
+  height: 26px;
+}
 .main-h2{
-    font-size: 21px;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 300;
   }
 
 .partion{
@@ -58,8 +62,10 @@
     /* /* display: inline-block; */
     display: flex; 
       padding-left: 7px;
-      font-size:medium ;
+      font-size:small;
       font-weight: 700;
+      padding: 9px;
+
   }
 
   

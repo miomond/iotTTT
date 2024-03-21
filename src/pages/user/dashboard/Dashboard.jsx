@@ -9,30 +9,43 @@ import fridge from "../../../assets/fridge-2-svgrepo-com.svg";
 import tv from "../../../assets/tv-svgrepo-com.svg";
 import { useSprings } from "@react-spring/web";
 import { set, useForm } from "react-hook-form";
+import { Doghnut } from "../../../components/charts/Doghnut";
+import fanSvg from '../../../assets/fan-svgrepo-com.svg'
 function Dashboard() {
   const [garag, setGarage] = useState(true);
   const handleGarageChange = (garag) => {
     let gar = garag.target.checked;
-    {gar ? gar = false : gar = true }
-    console.log(gar + ' garage is ');
-    
+    {
+      gar ? (gar = false) : (gar = true);
+    }
+    console.log(gar + " garage is ");
   };
 
+  const [Loc, setLock] = useState(false);
+  const handleLockChange = (locker) => {
+    setLock(locker.target.checked);
+  };
 
+  const [Ligh, setLight] = useState(false);
+  const handleLightChange = (ligh) => {
+    setLight(ligh.target.checked);
+  };
 
+  const [Light2, setLight2] = useState(false);
+  const handleLighteChange = (ligh) => {
+    setLight2(ligh.target.checked);
+  };
+  const [Fa, setFa] = useState(false);
+  const handleFaChange = (fan) => {
+    setFa(fan.target.checked);
+  };
 
-  const [Loc, setLock] = useState(true);
-  const handleLockChange = (locker) =>{  setLock(locker.target.checked)  }
-
-  const [Ligh, setLight] = useState(true);
-  const handleLightChange = (ligh) => { setLight(ligh.target.checked)  };
-
-  const [Light2, setLight2] = useState(true);
-  const handleLighteChange = (ligh) => { setLight2(ligh.target.checked)  };
-
-
-
- 
+  const hanleAllONS = ()=>{
+    let m = true;
+    setFa(m);
+    setLight2(m);
+    setLight(m);
+  }
 
   return (
     <>
@@ -40,9 +53,13 @@ function Dashboard() {
         <div className="partion ">
           <div className="part1 mt-4 d-flex   align-content-center  justify-content-between  flex-nowrap align-content-center">
             <div className="d-flex  align-content-center justify-content-center p-4">
-        {!Loc ? <img src={lock} alt="" className="garage-svg" /> : <img src={lock1} alt="" className="garage-svg" />}      
+              {!Loc ? (
+                <img src={lock} alt="" className="garage-svg" />
+              ) : (
+                <img src={lock1} alt="" className="garage-svg" />
+              )}
               <h6 className="card1-h">Security system</h6>
-            </div>    
+            </div>
             <div className="d-flex  align-content-center justify-content-center p-4">
               <label className="switcher">
                 <input type="checkbox" onChange={handleLockChange}  />
@@ -70,71 +87,61 @@ function Dashboard() {
             <h5 className="card1-h">Lights - interior</h5>
             <div className="lights">
               <div className=" d-flex   align-content-center">
-     {!Ligh ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light  fa-regular fa-lightbulb" /> }           
+                {!Ligh ? (
+                  <i className="close-light fa-solid fa-lightbulb " />
+                ) : (
+                  <i className="lamp-light  fa-regular fa-lightbulb" />
+                )}
                 <h6 className="card1-h">Kitchen</h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
-                  <input type="checkbox" onChange={handleLightChange} />
+                  <input type="checkbox" onChange={handleLightChange} checked={Ligh} />
                   <span className="slider" />
                 </label>
               </div>
             </div>
             <div className="lights">
               <div className=" d-flex   align-content-center">
-              {!Light2 ?  <i className='close-light fa-solid fa-lightbulb ' /> : <i className="lamp-light  fa-regular fa-lightbulb" /> }           
+                {!Light2 ? (
+                  <i className="close-light fa-solid fa-lightbulb " />
+                ) : (
+                  <i className="lamp-light  fa-regular fa-lightbulb" />
+                )}
 
                 <h6 className="card1-h">Kitchen</h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
-                  <input type="checkbox" onChange={handleLighteChange} />
+                  <input type="checkbox" onChange={handleLighteChange}  checked={Light2}  />
                   <span className="slider" />
                 </label>
               </div>
             </div>
             <div className="lights">
               <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Living room</h6>
+              {!Fa ? (<i className=" fa-solid      fa-fan" />) : (<img src={fanSvg} className="iconImg" alt="" />)}
+                <h6 className="card1-h">fan</h6>
               </div>
               <div className="">
                 <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
+                  <input type="checkbox" onChange={handleFaChange} checked={Fa} />
                   <span className="slider" />
                 </label>
               </div>
             </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Bedroom</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true}/>
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
-            <div className="lights">
-              <div className=" d-flex   align-content-center">
-                <i className=" fa-solid fa-lightbulb" />
-                <h6 className="card1-h">Bathroom</h6>
-              </div>
-              <div className="">
-                <label className="switcher toggel-light">
-                  <input type="checkbox" disabled={true} />
-                  <span className="slider" />
-                </label>
-              </div>
-            </div>
+           
+        
             <hr className="hr" />
             <div className="two-buttons">
-              <button className="All-ON control-btns">All ON</button>
+              <button className="All-ON control-btns" onClick={hanleAllONS}>All ON</button>
               <button className="control-btns">All OFF</button>
             </div>
           </div>
+          <div className="  part2 p-4 mt-4 "><Doghnut/>
+            
+          </div>
+
           <div className="  part2 p-4 mt-4 ">
             <h3 className=" card1-h">Appliances</h3>
             <hr className="margin-hr horizontal light mt-0 mb-2" />
