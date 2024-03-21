@@ -66,17 +66,17 @@ function Side() {
     <>
       <div className="contaminator">
         <div id="NAV">
+          <NavLink to="dashboard" className=" ato">
+            <i className="fa-solid    fa-dashboard" /> <span>Dashboard</span>
+          </NavLink>
           <NavLink className="ato  " to="profile">
             <i className="fa-solid   fa-face-grin-stars" />{" "}
             <span> Profile</span>
           </NavLink>
-          <NavLink to="dashboard" className=" ato">
-            <i className="fa-solid    fa-dashboard" /> <span>Dashboard</span>
-          </NavLink>
-          <Button className="ato " id="api" variant=" bg-transparent " onClick={handleShow}> <i className="fa-solid     fa-podcast" /> <span>post a blog</span></Button>
           <NavLink className="ato" to="allBlog">
             <i className="fa-solid   fa-blog" /> <span>blogs</span>
           </NavLink>
+          <Button className="ato " id="api" variant=" bg-transparent " onClick={handleShow}> <i className="fa-solid     fa-podcast" /> <span>post a blog</span></Button>
           {/* <NavLink className="ato" to="myFavorite">
             <i className="fa-solid fa-heart"> </i> <span>Favorite</span>
           </NavLink>
@@ -93,14 +93,14 @@ function Side() {
 
 
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}   centered>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Blog Post</Modal.Title>
+          <Modal.Title>Create New Blog</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title" className="m-3">Title</label>
               <input
                 type="text"
                 className="form-control"
@@ -111,26 +111,26 @@ function Side() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="body">Body</label>
+              <label htmlFor="body" className="m-3">Body</label>
               <textarea
                 className="form-control"
                 id="body"
-                rows="5"
+                rows="3"
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image" className="m-3">Image</label>
               <input
                 type="file"
-                className="form-control-file"
+                className="form-control"
                 id="image"
                 onChange={handleImageChange}
               />
             </div>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" className="m-3" type="submit">
               Create Blog
             </Button>
           </form>

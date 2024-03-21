@@ -34,10 +34,7 @@
 
 }
 
-.conteiner:hover {
-  box-shadow: rgba(0, 17, 255, 0.76) 0px 5px 15px;
-  transition: all 0.3s ease-in-out;
-}
+
 
 .conteiner .text {
   text-align: center;

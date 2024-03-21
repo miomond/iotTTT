@@ -5,13 +5,13 @@ import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Red', 'Blue'],
+  labels: ['Hot', 'Cold'],
   datasets: [
     {
       label: '# of Votes',
-      data: [35, 19],
+      data: [15, 19],
       backgroundColor: [
-        'rgba(255, 99, 132, 1)',
+        'rgb(255, 14, 8)',
         'rgba(54, 162, 235, 1)',
         
       ],
