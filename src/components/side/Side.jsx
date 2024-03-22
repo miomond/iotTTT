@@ -73,7 +73,7 @@ function Side() {
             <i className="fa-solid   fa-face-grin-stars" />{" "}
             <span> Profile</span>
           </NavLink>
-          <NavLink className="ato" to="allBlog">
+         <NavLink className="ato" to="allBlog">
             <i className="fa-solid   fa-blog" /> <span>blogs</span>
           </NavLink>
           <Button className="ato " id="api" variant=" bg-transparent " onClick={handleShow}> <i className="fa-solid     fa-podcast" /> <span>post a blog</span></Button>
